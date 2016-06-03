@@ -1,0 +1,48 @@
+header {
+        background-color: #EA2663;
+        width: 100%;
+        height: 60px;
+        margin: auto;
+        padding: 0px;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+
+        color: black;
+        text-align: center;
+        font-size: 25px;
+        line-height: 20px;
+        vertical-align: middle;
+        z-index: 100;
+        }
+}
+
+body {
+        position: absolute;
+        top: 66px;
+}
+
+.topSection {
+        position: absolute;
+        top: 68px;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+}
+.topSection #itemName {
+        width: 30%;
+        height: 50px;
+        font-size: 25px;
+        text-align: center;
+}
+.topSection #submitItemName {
+        position: relative;
+        width: 100px;
+        height: 50px;
+        background-color: pink;
+        margin: 0px;
+}

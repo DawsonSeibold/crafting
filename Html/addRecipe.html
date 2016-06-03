@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script> <!-- 1.11.1-->
+                 <link rel="stylesheet" type="text/css" href="../Css/addRecipeCss.css">
+                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+                <title>Add Crafting Recipe</title>
+
+                <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+                <script type="text/javascript" src="../JS/AddRecipe.js"></script>
+
+        </head>
+        <body>
+                <h4>Add Recipe</h4>
+                <form id="addRecipeForm">
+                        <h5>Display Name:</h5>
+                        <input id="displayName" type="text" name="itemName" placeholder="Ex: Oak Door"><br>
+                        <h5>Database Name:</h5>
+                        <input id="databaseName" type="text" name="itemName" placeholder="Ex: wooden_door"><br>
+                        <h5>Block ID:</h5>
+                        <input id="blockId" type="text" name="itemName" placeholder="Ex: 64"><br>
+                        <h5>Item ID:</h5>
+                        <input id="itemId" type="text" name="itemName" placeholder="Ex: 324"><br>
+                        <h5>How Many Items Returned:</h5>
+                        <input id="returnes" type="text" name="itemName" placeholder="Ex: 1"><br>
+                        <h5>All Items Needed To Craft (Seperate By Commas, In Database Name Form):</h5>
+                        <input id="allItems" type="text" name="itemName" placeholder="Ex: oak_planaks, oak_planks"><br>
+                        <h5>Wiki Link:</h5>
+                        <input id="wikiLink" type="text" name="itemName" placeholder="Ex: http://minecraft.gamepedia.com/Door"><br>
+
+                        <h3>Add Recipe</h3>
+                        <!--
+                        <input id="1" type="text" name="itemName" placeholder="Search For A Recipe">
+
+                        <br>
+                        <input id="submitItemName" type="submit" value="Submit"> -->
+                        <!--   CRAFTING TABLE -->
+                                <!-- <div class="crafting">Crafting</div> -->
+
+
+                                <script>
+                                                // Create a reference with an initial file path and name
+                                                var storage = firebase.storage();
+                                                var pathReference = storage.ref('item-images/5-0.png');
+
+                                                // Create a reference from a Google Cloud Storage URI
+                                                var gsReference = storage.refFromURL('gs://bucket/images/stars.jpg')
+
+                                                // Create a reference from an HTTPS URL
+                                                // Note that in the URL, characters are URL escaped!
+                                                var httpsReference = storage.refFromURL('https://firebasestorage.googleapis.com/v0/b/project-3394395307247337099.appspot.com/o/item-images%2F0-0.png?alt=media&token=8cb14f19-aadc-4809-a8ef-b021ebed2425');
+                                </script>
+
+
+
+                                         <div id='grid'>
+                                           <div class='grid-element' id="1">
+                                             <img class ="displayed" src='https://justplayhere.com/MinecraftData/images/57.png' />
+
+                                           </div>
+
+                                           <div class='grid-element' id="2">>
+                                             <img class ="displayed" src='https://firebasestorage.googleapis.com/v0/b/project-3394395307247337099.appspot.com/o/item-images%2F0-0.png?alt=media&token=8cb14f19-aadc-4809-a8ef-b021ebed2425' />
+                                           </div>
+
+                                           <div class='grid-element' id="3">
+                                             <img class ="displayed" src='https://justplayhere.com/MinecraftData/images/0.png' />
+                                           </div>
+
+                                           <div class='grid-element' id="4">
+                                             <img class ="displayed" src='https://justplayhere.com/MinecraftData/images/264.png' />
+                                           </div>
+
+                                           <div class='grid-element' id="5">
+                                             <img class ="displayed" src='https://justplayhere.com/MinecraftData/images/0.png' />
+                                           </div>
+
+                                           <div class='grid-element' id="6">
+                                             <img class ="displayed" src='https://justplayhere.com/MinecraftData/images/264.png' />
+                                           </div>
+
+
+                                           <div class='grid-element' id="7">
+                                             <img class ="displayed" src='https://justplayhere.com/MinecraftData/images/264.png' />
+                                           </div>
+
+                                           <div class='grid-element' id="8">
+                                             <img class ="displayed" src='https://justplayhere.com/MinecraftData/images/0.png' />
+                                           </div>
+
+                                           <div class='grid-element' id="9">
+                                             <img class ="displayed" src='https://justplayhere.com/MinecraftData/images/264.png' />
+                                           </div>
+
+                                         </div>
+
+                                         <div class='clear'></div>
+
+                                             <div class="arrow">
+                                           <i class="fa fa-arrow-right fa-3x"></i>
+                                           </div>
+
+                </form>
+
+                <script type="text/javascript">
+                                $('#addRecipeForm').submit(function(event) {
+                                        event.preventDefault();
+
+                                        var DisplayName = $('#displayName').val();
+                                        var DatabaseName = $('#databaseName').val();
+                                        var BlockID = $('#blockId').val();
+                                        var ItemID = $('#itemId').val();
+                                        var Returnes = $('#returnes').val();
+                                        var allItems = $('#allItems').val().split(',');
+
+                                        //Crafting Table
+
+
+                                        console.log("Submitted, Name: "+ DisplayName + " Database Name: " + DatabaseName + " Block Id: " + BlockID + " item Id: " + ItemID + " returnes: " + Returnes);
+                                });
+                </script>
+        </body>
+</html>
